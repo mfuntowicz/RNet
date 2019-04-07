@@ -119,7 +119,7 @@ class SquadDataset(Dataset):
 
             fields = [
                 ('id', RawField()),
-                (('content_w', 'content_c'), (text_f, char_f)),
+                (('context_w', 'context_c'), (text_f, char_f)),
                 (('question_w', 'question_c'), (text_f, char_f)),
                 ('context', RawField()),
                 ('answer', RawField()),

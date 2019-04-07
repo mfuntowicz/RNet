@@ -25,7 +25,11 @@ def setup_squad(args):
 
     # Create vocab (content_w and question_w are the same field, so building on one of them will share the vocab)
     # same for content_c and question_c
-    squad_train.fields['content_w'].build_vocab(squad_train, squad_test, vectors=words_v)
-    squad_train.fields['content_c'].build_vocab(squad_train, squad_test, vectors=chars_v)
+    squad_train.fields['context_w'].build_vocab(squad_train, squad_test, vectors=words_v)
+    squad_train.fields['context_c'].build_vocab(squad_train, squad_test, vectors=chars_v)
 
     return squad_train, squad_test, words_v, chars_v
+
+
+def sort_by_lengths(x):
+    return -len(x.context_w)
