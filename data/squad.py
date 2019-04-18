@@ -138,5 +138,5 @@ class SquadDataset(Dataset):
 
 class SquadDebugDataset(SquadDataset):
     def __init__(self, path: str, tokenizer: callable):
-        super().__init__(path, tokenizer, 128)
+        super().__init__(path, tokenizer, 1024)
 
